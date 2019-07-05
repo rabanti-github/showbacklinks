@@ -1,20 +1,14 @@
 <?php
 
-$wgExtensionCredits['skin'][] = array(
-    'path' => __FILE__,
-    'name' => 'showbacklinks',
-    'author' => array( 'Michael Murtaugh <mm@automatist.org>' ),
-    'url' => 'https://github.com/automatist/showbacklinks.php', 
-    'description' => 'This extension adds a backlinks section to the end of every page.',
-    'version'  => 1.0,
-);
+if (function_exists('wfLoadExtension')) {
+    wfLoadExtension('ShowBackLinks');
 
-$dir = dirname( __FILE__ ) . '/';
+    $dir = dirname(__FILE__) . '/';
 
-// Message class
-$wgExtensionMessagesFiles['WGSBL' ] = $dir . 'showbacklinks.i18n.php';
-// Helper class
-$wgAutoloadClasses[ 'ShowBackLinksHooks' ] = $dir . 'showbacklinks.body.php';
-// Hooks
-$wgHooks['SkinAfterContent' ][] = 'ShowBackLinksHooks::onSkinAfterContent';
+    // Path to I18N
+    $wgMessagesDirs['ShowBackLinks'] = __DIR__ . '/i18n';
 
+    return;
+} else {
+    die('This version of the MsUpload extension requires MediaWiki 1.25+');
+}

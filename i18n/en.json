@@ -1,0 +1,11 @@
+
+{
+	"@metadata": {
+		"authors": [
+			"Raphael Stoeckli"
+		]
+	},
+	"sbl-nobl": "No backlinks for this article",
+	"sbl-desc": "Shows in the footer of every page a list of pages which links to the current page (backlinks)."
+}
+
