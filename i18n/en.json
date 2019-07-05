@@ -5,7 +5,8 @@
 			"Raphael Stoeckli"
 		]
 	},
-	"sbl-nobl": "No backlinks for this article",
-	"sbl-desc": "Shows in the footer of every page a list of pages which links to the current page (backlinks)."
+	"sbl-no-backlinks": "No backlinks for this article",
+	"sbl-redirect": "Redirect",
+	"sbl-description": "Shows in the footer of every page a list of pages which links to the current page (backlinks)."
 }
 

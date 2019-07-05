@@ -10,5 +10,5 @@ if (function_exists('wfLoadExtension')) {
 
     return;
 } else {
-    die('This version of the MsUpload extension requires MediaWiki 1.25+');
+    die('This version of the ShowBackLinks extension requires MediaWiki 1.25+');
 }

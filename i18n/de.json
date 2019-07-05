@@ -5,7 +5,8 @@
 			"Raphael Stoeckli"
 		]
 	},
-	"sbl-nobl": "Zu dieser Seite führen keine Links",
-	"sbl-desc": "Zeigt in der Fusszeile jeder Seite eine Liste von Seiten an, welche auf die aktuelle Seite verlinken (backlinks)."
+	"sbl-no-backlinks": "Zu dieser Seite führen keine Links",
+	"sbl-redirect": "Weiterleitung",
+	"sbl-description": "Zeigt in der Fußzeile jeder Seite eine Liste von Seiten an, welche auf die aktuelle Seite verlinken (backlinks)."
 }
 

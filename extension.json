@@ -1,25 +1,28 @@
 {
-	"name": "showbacklinks",
-	"version": "1.1.0",
-	"author": [
-		"[mailto:mm@automatist.org Michael Murtaugh]",
-		"[https://github.com/rabanti-github Raphael Stoeckli]"
-	],
-	"url": "https://github.com/rabanti-github/showbacklinks",
-	"descriptionmsg": "sbl-desc",
-	"license-name": "AGPL v3",
-	"type": "other",
-	"MessagesDirs": {
-		"ShowBackLinks": [
-			"i18n"
-		]
-	},
-	"AutoloadClasses": {
-		"ShowBackLinksHooks": "ShowBackLinks.body.php"
-	},
-	"Hooks": {
-		"SkinAfterContent": "ShowBackLinksHooks::onSkinAfterContent"
-			
-	},
-	"manifest_version": 1
+  "name": "showbacklinks",
+  "version": "1.1.0",
+  "author": [
+    "[mailto:mm@automatist.org Michael Murtaugh]",
+    "[https://github.com/rabanti-github Raphael Stoeckli]"
+  ],
+  "url": "https://github.com/rabanti-github/showbacklinks",
+  "descriptionmsg": "sbl-description",
+  "license-name": "AGPL v3",
+  "type": "other",
+  "MessagesDirs": {
+    "ShowBackLinks": ["i18n"]
+  },
+  "AutoloadClasses": {
+    "ShowBackLinksHooks": "ShowBackLinks.body.php"
+  },
+  "ResourceModules": {
+    "ext.ShowBackLinks": {
+      "scripts": ["resources/js/script.js"],
+      "styles": "resources/css/style.js"
+    }
+  },
+  "Hooks": {
+    "SkinAfterContent": "ShowBackLinksHooks::onSkinAfterContent"
+  },
+  "manifest_version": 1
 }

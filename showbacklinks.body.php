@@ -14,7 +14,7 @@ class ShowBackLinksHooks
                 continue;
             }
             if ($t->isRedirect()) {
-                $text .= "* [[" . $t->getText() . "]] (redirect)\n";
+                $text .= "* [[" . $t->getText() . "]] (" . wfMessage('sbl-redirect')->text(). ")\n";
                 foreach ($t->getLinksTo() as $st) {
                     if ($st == $wgTitle || $st->getText() == $tMain || !$st->exists() || ($st->getNamespace() !== NS_MAIN) || ($st->isRedirect())) {
                         continue;
@@ -26,7 +26,7 @@ class ShowBackLinksHooks
             $text .= "* [[" . $t->getText() . "]]\n";
         }
         if (strlen($text) == 0) {
-            $text = wfMessage('sbl-nobl')->text();
+            $text = wfMessage('sbl-no-backlinks')->text();
         }
         $data = $wgOut->parse($linksTitle . $text);
         return true;

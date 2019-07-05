@@ -7,7 +7,7 @@ The extension was forked from https://github.com/benparsons/showbacklinks and up
 
 
 ## Installation
-1. Place all files, as well as the "i18n" folder and all files in it into a folder called "ShoWBackLinks" in the "extensions" directory of your MediaWiki installation (README.md and .gitignore are not necessary)
+1. Place all files in the root folder, as well as the "i18n" and "resources" folder and all its content into a folder called "ShoWBackLinks" in the "extensions" directory of your MediaWiki installation (README.md and .gitignore are not necessary)
 2. Add the following to your LocalSettings.php file:
 
 ```php
