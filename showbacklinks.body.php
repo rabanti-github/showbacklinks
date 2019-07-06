@@ -13,12 +13,12 @@ class ShowBackLinksHooks
 
         $linksTitlePrefix = "== " . wfMessage("whatlinkshere")->text(); // . $collapseControl . "";
         $collapseControl = "<span title=\"" . wfMessage('showbacklinks-toggle-text')->text() . "\" alt=\"showbacklinksToogleCollapse['showbacklinks-arrow', 'showbacklinks-container']\" id=\"showbacklinks-arrow\" class=\"showbacklinks-arrow-default\" id=\"backlink-colapse-trigger\">&#x25BC;</span> ";
-        $linksTitleSuffix = " ==\n<div id=\"showbacklinks-container\">\n";
+        $linksTitleSuffix = " ==\n<div id=\"showbacklinks-container\" class=\"toccolours mw-collapsible\" style=\"width:400px; overflow:auto;\">\n";
 
         $text = "";
         $links = $wgTitle->getLinksTo();
         usort($links, function ($a, $b) {
-            strcmp($a->getText(), $b->getText());
+            return strcmp($a->getText(), $b->getText());
         });
 
         foreach ($links as $t) {

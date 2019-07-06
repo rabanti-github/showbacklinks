@@ -1,13 +1,9 @@
-
 {
-	"@metadata": {
-		"authors": [
-			"Raphael Stoeckli"
-		]
-	},
-	"showbacklinks-no-backlinks": "No backlinks for this article",
-	"showbacklinks-redirect": "Redirect",
-	"showbacklinks-description": "Shows in the footer of every page a list of pages which links to the current page (backlinks).",
-	"showbacklinks-toggle-text": "To show or hide the backlinks, click on the arrow"
+  "@metadata": {
+    "authors": ["Raphael Stoeckli"]
+  },
+  "showbacklinks-no-backlinks": "No backlinks for this article",
+  "showbacklinks-redirect": "Redirect",
+  "showbacklinks-description": "Shows in the footer of every page a list of pages which links to the current page (backlinks).",
+  "showbacklinks-toggle-text": "To show or hide the backlinks, click on the arrow"
 }
-
