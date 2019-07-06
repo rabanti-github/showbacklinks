@@ -20,7 +20,6 @@ wfLoadExtension( 'ShowBackLinks' );
 - Currently, every page shows its backlinks, also special pages and the home page
 - The backlink list uses quite some place at the moment (collapse function planned)
 - There are no options at the moment
-- The list of backlinks is currently sorted by date and nor alphabetically
 
 ## Support
 
