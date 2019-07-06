@@ -6,7 +6,7 @@
     "[https://github.com/rabanti-github Raphael Stoeckli]"
   ],
   "url": "https://github.com/rabanti-github/showbacklinks",
-  "descriptionmsg": "sbl-description",
+  "descriptionmsg": "showbacklinks-description",
   "license-name": "AGPL v3",
   "type": "other",
   "MessagesDirs": {
@@ -16,13 +16,21 @@
     "ShowBackLinksHooks": "ShowBackLinks.body.php"
   },
   "ResourceModules": {
-    "ext.ShowBackLinks": {
-      "scripts": ["resources/js/script.js"],
-      "styles": "resources/css/style.js"
+    "ext.ShowBackLinks.scripts": {
+      "scripts": ["resources/showbacklinks.js"],
+      "position": "top"
+    },
+    "ext.ShowBackLinks.styles": {
+      "styles": ["resources/showbacklinks.css"]
     }
   },
+  "ResourceFileModulePaths": {
+    "localBasePath": "",
+    "remoteExtPath": "ShowBackLinks"
+  },
   "Hooks": {
-    "SkinAfterContent": "ShowBackLinksHooks::onSkinAfterContent"
+    "SkinAfterContent": ["ShowBackLinksHooks::onSkinAfterContent"],
+    "BeforePageDisplay": ["ShowBackLinksHooks::onBeforePageDisplay"]
   },
   "manifest_version": 1
 }
