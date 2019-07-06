@@ -7,7 +7,9 @@ class ShowBackLinksHooks
     {
         global $wgOut, $wgTitle;
         $tMain = Title::newFromText(wfMessage("mainpage")->text());
-        $linksTitle = "== " . wfMessage("whatlinkshere")->text() . " ==\n";
+        $collapseControl = "<span id=\"backlink-colapse-trigger\">▼</span> ";
+        $linksTitle = "== " . wfMessage("whatlinkshere")->text() .$collapseControl. " ==\n<div id=\"backlink-container\">";
+       
         $text = "";
         foreach ($wgTitle->getLinksTo() as $t) {
             if ($t == $wgTitle || $t->getText() == $tMain || !$t->exists() || ($t->getNamespace() !== NS_MAIN)) {
@@ -28,6 +30,7 @@ class ShowBackLinksHooks
         if (strlen($text) == 0) {
             $text = wfMessage('sbl-no-backlinks')->text();
         }
+        $text = $text . "</div>";
         $data = $wgOut->parse($linksTitle . $text);
         return true;
     }
