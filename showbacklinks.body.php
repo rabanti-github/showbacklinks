@@ -12,13 +12,13 @@ class ShowBackLinksHooks
 
 
         $linksTitlePrefix = "== " . wfMessage("whatlinkshere")->text(); // . $collapseControl . "";
-        $collapseControl = "<span title=\"" . wfMessage('showbacklinks-toggle-text')->text() . "\" alt=\"showbacklinksToogleCollapse['showbacklinks-arrow', 'showbacklinks-container']\" id=\"showbacklinks-arrow\" class=\"showbacklinks-arrow-default\" id=\"backlink-colapse-trigger\">&#x25BC;</span> ";
-        $linksTitleSuffix = " ==\n<div id=\"showbacklinks-container\">\n";
+       // $collapseControl = "<span title=\"" . wfMessage('showbacklinks-toggle-text')->text() . "\" onCklick=\"showbacklinksToogleCollapse('showbacklinks-arrow', 'showbacklinks-container')\" id=\"showbacklinks-arrow\" class=\"showbacklinks-arrow-default\" id=\"backlink-colapse-trigger\">&#x25BC;</span> ";
+        $linksTitleSuffix = " ==\n<div class=\"toccolours mw-collapsible\" style=\"width:400px; overflow:auto;\">\n";
 
         $text = "";
         $links = $wgTitle->getLinksTo();
         usort($links, function ($a, $b) {
-            strcmp($a->getText(), $b->getText());
+            return strcmp($a->getText(), $b->getText());
         });
 
         foreach ($links as $t) {
@@ -42,10 +42,10 @@ class ShowBackLinksHooks
         }
         $text = $text . "</div>";
 
-        $data = $wgOut->parse($linksTitlePrefix)
-            . $wgOut->AddHTML($collapseControl)
-            . $wgOut->parse($linksTitleSuffix . $text);
-        $data = $wgOut->parse($linksTitlePrefix . $collapseControl . $linksTitleSuffix . $text); // This approach is not working yet
+      //  $data = $wgOut->parse($linksTitlePrefix)
+      //      . $wgOut->AddHTML($collapseControl)
+      //      . $wgOut->parse($linksTitleSuffix . $text);
+        $data = $wgOut->parse($linksTitlePrefix . $linksTitleSuffix . $text); // This approach is not working yet
         //$data = $wgOut->parse($linksTitle . $text);
         return true;
     }
