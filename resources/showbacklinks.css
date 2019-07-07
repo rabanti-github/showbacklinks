@@ -1,6 +1,7 @@
-.showbacklinks-arrow-default {
-  font-size: 0.75em;
+.showbacklinks-trigger-default {
+  font-size: 0.9em;
   text-decoration: none;
   margin-left: 0.25em;
   cursor: pointer;
+  color: blue;
 }
