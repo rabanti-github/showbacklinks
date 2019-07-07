@@ -7,13 +7,15 @@ class ShowBackLinksHooks
     {
         global $wgOut, $wgTitle;
         $tMain = Title::newFromText(wfMessage("mainpage")->text());
-
-
-
-
-        $linksTitlePrefix = "== " . wfMessage("whatlinkshere")->text(); // . $collapseControl . "";
-        $collapseControl = "<span title=\"" . wfMessage('showbacklinks-toggle-text')->text() . "\" alt=\"showbacklinksToogleCollapse['showbacklinks-arrow', 'showbacklinks-container']\" id=\"showbacklinks-arrow\" class=\"showbacklinks-arrow-default\" id=\"backlink-colapse-trigger\">&#x25BC;</span> ";
-        $linksTitleSuffix = " ==\n<div id=\"showbacklinks-container\" class=\"toccolours mw-collapsible\" style=\"width:400px; overflow:auto;\">\n";
+        $linksTitlePrefix = "== " . wfMessage("whatlinkshere")->text() . " ==";
+        $collapseControl = " <span title=\"" . wfMessage('showbacklinks-toggle-hint')->text()
+            . "\" onClick=\"showbacklinksToogleCollapse('backlink-colapse-trigger', 'showbacklinks-container', '"
+            . wfMessage('showbacklinks-toggle-visible')->text() . "', '"
+            . wfMessage('showbacklinks-toggle-hidden')->text()
+            . "')\" class=\"showbacklinks-trigger-default\" id=\"backlink-colapse-trigger\">[ "
+            . wfMessage('showbacklinks-toggle-visible')->text()
+            . " ]</span> ";
+        $linksTitleSuffix = "<div id=\"showbacklinks-container\" class=\"toccolours mw-collapsible-content\" style=\"width:400px; overflow:auto;\">\n";
 
         $text = "";
         $links = $wgTitle->getLinksTo();
@@ -31,7 +33,7 @@ class ShowBackLinksHooks
                     if ($st == $wgTitle || $st->getText() == $tMain || !$st->exists() || ($st->getNamespace() !== NS_MAIN) || ($st->isRedirect())) {
                         continue;
                     }
-                    $text .= "** [[" . $st->getText() . "]]\n";
+                    $text .= "** [[" . $st->getText() . "]] (" . wfMessage('showbacklinks-links-of-redirect')->text() . ")\n";
                 }
                 continue;
             }
@@ -42,11 +44,8 @@ class ShowBackLinksHooks
         }
         $text = $text . "</div>";
 
-        $data = $wgOut->parse($linksTitlePrefix)
-            . $wgOut->AddHTML($collapseControl)
-            . $wgOut->parse($linksTitleSuffix . $text);
-        $data = $wgOut->parse($linksTitlePrefix . $collapseControl . $linksTitleSuffix . $text); // This approach is not working yet
-        //$data = $wgOut->parse($linksTitle . $text);
+        //      . $wgOut->parse($linksTitlePrefix . $collapseControl . $linksTitleSuffix . $text);
+        $data = $wgOut->parse($linksTitlePrefix) .  $collapseControl . $wgOut->parse($linksTitleSuffix . $text); // This approach is a hack until the MW-native collapse function is working properly 
         return true;
     }
 

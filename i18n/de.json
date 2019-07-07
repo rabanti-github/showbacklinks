@@ -4,6 +4,9 @@
   },
   "showbacklinks-no-backlinks": "Zu dieser Seite führen keine Links",
   "showbacklinks-redirect": "Weiterleitung",
+  "showbacklinks-links-of-redirect": "Links von Weiterleitung",
   "showbacklinks-description": "Zeigt in der Fußzeile jeder Seite eine Liste von Seiten an, welche auf die aktuelle Seite verlinken (Backlinks).",
-  "showbacklinks-toggle-text": "Zum Ein- oder Ausblenden der Backlinks, Pfeil anklicken"
+  "showbacklinks-toggle-hint": "Zum Ein- oder Ausblenden der Backlinks, Text anklicken",
+  "showbacklinks-toggle-hidden": "Anzeigen",
+  "showbacklinks-toggle-visible": "Verbergen"
 }
