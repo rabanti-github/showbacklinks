@@ -4,7 +4,7 @@
 
 This is a simple MediaWiki extension to display "What Links Here" (backlinks) in the footer of every page.
 
-The extension was forked from https://github.com/benparsons/showbacklinks and updated to newer MediaWiki versions (1.25+).
+The extension was forked from https://github.com/benparsons/showbacklinks and updated to newer MediaWiki versions (1.35).
 
 ## Installation
 
@@ -17,10 +17,8 @@ wfLoadExtension( 'ShowBackLinks' );
 
 ## Known Issues
 
-- Currently, every page shows its backlinks, also special pages and the home page
-- The backlink section uses a non-native collapse function (will be changed to MW-native)
 - There are no options at the moment
 
 ## Support
 
-Issues can be filed on Github: https://github.com/rabanti-github/showbacklinks/issues
+Issues can be filed on Github: https://github.com/musznik/showbacklinks/issues
