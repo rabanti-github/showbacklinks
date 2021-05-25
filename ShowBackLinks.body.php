@@ -6,6 +6,10 @@ class ShowBackLinksHooks
     public static function onSkinAfterContent(&$data, Skin $skin)
     {
         global $wgOut, $wgTitle;
+	    
+	if($wgTitle->isSpecialPage())
+		return;
+
         $tMain = Title::newFromText(wfMessage("mainpage")->text());
         $linksTitlePrefix = "== " . wfMessage("whatlinkshere")->text() . " ==";
         $collapseControl = " <span title=\"" . wfMessage('showbacklinks-toggle-hint')->text()
