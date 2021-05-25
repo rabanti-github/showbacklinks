@@ -44,14 +44,17 @@ class ShowBackLinksHooks
         }
         $text = $text . "</div>";
 
-        //      . $wgOut->parse($linksTitlePrefix . $collapseControl . $linksTitleSuffix . $text);
-        $data = $wgOut->parse($linksTitlePrefix) .  $collapseControl . $wgOut->parse($linksTitleSuffix . $text); // This approach is a hack until the MW-native collapse function is working properly 
+		$parser  = \MediaWiki\MediaWikiServices::getInstance()->getParser();
+		$parsed  =  $parser->parse("__NOEDITSECTION__".$linksTitlePrefix,$wgTitle,new ParserOptions())->getText();		
+        $parsed .=  $parser->parse($linksTitleSuffix.$text,$wgTitle,new ParserOptions())->getText();						
+		$data = $wgOut->addHTML($parsed); 
+        
         return true;
     }
 
     public static function onBeforePageDisplay(OutputPage $out, Skin $skin)
     {
-        $out->addModuleStyles('ext.ShowBackLinks.styles');
-        $out->addModuleScripts('ext.ShowBackLinks.scripts');
+		$out->addModules( ['ext.ShowBackLinks.scripts'] ) ;
+		$out->addModules( ['ext.ShowBackLinks.styles'] ) ;
     }
 }
