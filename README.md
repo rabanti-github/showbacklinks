@@ -17,7 +17,6 @@ wfLoadExtension( 'ShowBackLinks' );
 
 ## Known Issues
 
-- Currently, every page shows its backlinks, also special pages and the home page
 - There are no options at the moment
 
 ## Support
