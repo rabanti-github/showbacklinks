@@ -1,0 +1,12 @@
+{
+  "@metadata": {
+    "authors": ["musznik"]
+  },
+  "showbacklinks-no-backlinks": "Żaden link nie odwołuje się do tego artykułu.",
+  "showbacklinks-redirect": "Przekierowanie",
+  "showbacklinks-links-of-redirect": "Link do przekierowania",
+  "showbacklinks-description": "Pokazuje linki do artykułów, które odwołują się do przeglądanego artykułu.",
+  "showbacklinks-toggle-hint": "Aby ukryć backlinki, kliknij w guzik 'ukryj' lub 'pokaż'",
+  "showbacklinks-toggle-hidden": "Pokaż",
+  "showbacklinks-toggle-visible": "Ukryj"
+}
